@@ -25,3 +25,16 @@ def test_stats_calculation2():
     
     # Vérification des résultats
     assert calculated == expected, f"Expected {expected}, got {calculated}"
+
+def test_stats_calculation3():
+    # Données factices pour le test
+    test3 = pd.DataFrame({'Value': [1, 2, 3]})
+    
+    # Résultat attendu
+    expected = {'mean': 2, 'median': 2, 'sum': 6}
+    
+    # Calcul des statistiques
+    calculated = test3['Value'].agg(['mean', 'median', 'sum']).to_dict()
+    
+    # Vérification des résultats
+    assert calculated == expected, f"Expected {expected}, got {calculated}"
